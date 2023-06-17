@@ -1,0 +1,54 @@
+.ab{
+    width: 10px;
+}
+.aa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+    box-shadow: 0px 2px 6px hsl(200, 15%, 8%);
+}
+
+.gri{
+    background-color: yellow;
+    width: 230px;
+    height: 310px;
+    margin: 30px;
+
+}
+.gr{
+    margin-left: 20px;
+    height: 150px;
+}
+.o{
+    height: 150px;
+    width: 230px;
+
+}
+
+.grip{
+    display: grid;
+    grid-template-columns: 240px 240px 240px 240px;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+.qq{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1140px;
+    align-content: center;
+    
+}
+.as{
+    margin-left: 120px;
+    margin-top: 30px;
+}
+
+.kk{
+    margin-top: 30px;
+}
