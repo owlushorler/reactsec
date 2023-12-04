@@ -1,15 +1,16 @@
 .ab{
-    width: 10px;
+    width: 20px;
 }
+
+
 .aa{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-left: 100px;
-    padding-right: 100px;
+    justify-content: space-around;
     align-items: center;
     box-shadow: 0px 2px 6px hsl(200, 15%, 8%);
 }
+
 
 .gri{
     background-color: yellow;
@@ -40,7 +41,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1140px;
+    width: 100vw;
     align-content: center;
     
 }
@@ -52,3 +53,131 @@
 .kk{
     margin-top: 30px;
 }
+
+@media screen and (min-width: 100px) {
+    .aa{
+        width: 100vw;
+        font-size: 4vw;
+        
+    }
+    .ab{
+        width: 4vw;
+    }
+    .as{
+    margin-left: 2vw;
+    width: 30vw;
+    }
+    .kk{
+        margin-right: 7vw;
+    }
+    .grip{
+        display: grid;
+        grid-template-columns: 80vw;
+        justify-content: center;
+    }
+    .grip-all{
+        width: 94vw;
+        padding: 3vw;
+    }
+    .grip-a{
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .aa{
+        width: 100vw;
+        font-size: 2vw;
+        
+    }
+    .ab{
+        width: 2vw;
+    }
+    .as{
+    margin-left: 2vw;
+    width: 20vw;
+    }
+    .kk{
+        margin-right: 7vw;
+    }
+    .grip{
+        display: grid;
+        grid-template-columns: 40vw 40vw ;
+        justify-content: center;
+        
+    }
+    .grip-all{
+        width: 94vw;
+        padding: 3vw;
+    }
+    .grip-a{
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .aa{
+        width: 100vw;
+        font-size: 1.8vw;
+        
+    }
+
+    .ab{
+        width: 2vw;
+    }
+    .as{
+    margin-left: 2vw;
+    width: 20vw;
+    }
+    .kk{
+        margin-right: 7vw;
+        font-size: 1.5vw;
+    }
+    .grip{
+        display: grid;
+        grid-template-columns: 30vw 30vw 30vw ;
+        justify-content: center;
+        
+    }
+    .grip-all{
+        width: 94vw;
+        padding: 3vw;
+    }
+    .grip-a{
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .aa{
+        width: 100vw;
+        font-size: 1.8vw;
+        
+    }
+
+    .ab{
+        width: 2vw;
+    }
+    .as{
+    margin-left: 2vw;
+    width: 20vw;
+    }
+    .kk{
+        margin-right: 7vw;
+        font-size: 1.5vw;
+    }
+    .grip{
+        display: grid;
+        grid-template-columns: 20vw 20vw 20vw 20vw ;
+        justify-content: center;
+        
+    }
+    .grip-all{
+        width: 94vw;
+        padding: 3vw;
+    }
+    .grip-a{
+        width: 100vw;
+    }
+}
+

@@ -4,6 +4,8 @@ import opp from './image/4808961-200.png'
 import './ac.css'
 import Filte from "./filter";
 import Mapp from "./aa";
+import store from "./store";
+import {useSelector} from "react-redux"
 
 
 
@@ -11,7 +13,8 @@ function App() {
   const [coun,setcount]=useState(true)
   const [count,setcountt]=useState(true)
   const [co,setcoun]=useState([])
-  const [we,setwe]=useState(["lovdvd"])
+  const [we,setwe]=useState(["loading..."])
+  const display = useSelector((state)=>state.dis)
 
   
  
@@ -62,7 +65,7 @@ let s={
     
   const hopp = co.map(ele=>{
     return(
-      <div className="gri" style={coun?style:sty} >
+      <div className="gri" style={display?style:sty} >
           
     <div className="o" >
     <img className="o" src={ele.flags.svg} alt=""/>
@@ -92,7 +95,7 @@ let s={
   let ap= co.filter(ele=> ele.region == lol)
   setwe(ap.map(ele=>
 
-      <div className="gri" style={coun?style:sty} >
+      <div className="gri" style={display?style:sty} >
             
       <div className="o" >
       <img className="o" src={ele.flags.svg} alt=""/>
@@ -111,21 +114,44 @@ let s={
    ))
    
 
- console.log(ap)  
+ 
 
 }
 
 
 
+function light (){
+  
+  store.dispatch({
+    type:"ligt"
+  })
+  
+  
+}
+
+function dark (){
+  
+  store.dispatch({
+    type:"dark"
+  })
+  
+  
+}
+//console.log(display)
+
+
+
   return (
     <div className="App">
+      
+     
       <div> 
 
-          <div  style={coun?style:sty} className="aa"  >
+          <div  style={display?style:sty} className="aa"  >
             <p>where is the world?</p>
             <section  >
-          {coun &&  <img onClick={()=>setcount(ele=>ele?false:true)}  className="ab" src={op} alt=""/>}{coun && <>dark mode</>}  
-          {!coun && <img onClick={()=>setcount(ele=>ele?false:true)} className="ab" src={opp} alt=""/> } {!coun && <>light mode</>} 
+          {display &&  <img onClick={()=>light()}  className="ab" src={op} alt=""/>}{display && <   > dark mode</>}  
+          {!display && <img onClick={()=>dark()} className="ab" src={opp} alt=""/> } {!display && <>light mode</>} 
             </section>
           </div>
          
@@ -133,11 +159,11 @@ let s={
       
       <div >
 
-        <div style={coun?styl:s} >
-        <div className="qq" style={coun?styl:s}  >
-        <input style={coun?style:sty} className="as"
-         onChange={e=>got(e.target.value)} />
-        <select style={coun?style:sty} className="kk" onChange={e=>got(e.target.value)} onClick={()=>setcountt(false)} >  
+        <div style={display?styl:s} >
+        <div className="qq" style={display?styl:s}  >
+       {/* <input style={coun?style:sty} className="as"
+         onChange={e=>got(e.target.value)} />*/}
+        <select style={display?style:sty} className="kk" onChange={e=>got(e.target.value)} onClick={()=>setcountt(false)} >  
            <option value="Africa"  >filter by region</option>
            <option  >Africa</option>
            <option >Asia</option>
@@ -151,24 +177,25 @@ let s={
         </div>
 
 
-     {!count && <div  style={coun?styl:s} >
-        <button style={coun?style:sty} onClick={()=>setcountt(ele=>ele?false:true)} >back </button>
-        <div style={coun?styl:s} className="grip">
+     {!count && <div className="grip-all" style={display?styl:s} >
+        <button style={display?style:sty} onClick={()=>setcountt(ele=>ele?false:true)} >back </button>
+        <div style={display?styl:s} className="grip">
 
-          
           {we}
+         
         </div>
         </div>}
       </div>
      
       
-    
+        <div className="grip-a" >
 
-       <div style={coun?styl:s} className="grip">
+       <div style={display?styl:s} className="grip">
       
       {count && hopp}
       
         
+       </div>
        </div>
 
       
