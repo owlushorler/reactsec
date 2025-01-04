@@ -5,7 +5,9 @@ import './ac.css'
 import Filte from "./filter";
 import Mapp from "./aa";
 import store from "./store";
+import "./index.css"
 import {useSelector} from "react-redux"
+
 
 
 
@@ -65,14 +67,15 @@ let s={
     
   const hopp = co.map(ele=>{
     return(
-      <div className="gri" style={display?style:sty} >
+      <div className="w-48 flex flex-col    " style={display?style:sty} >
           
-    <div className="o" >
-    <img className="o" src={ele.flags.svg} alt=""/>
+    <div className="" >
+      
+    <img className="w-48 h-40 " src={ele.flags.svg} alt=""/>
   
     </div>
 
- <div className="gr" > 
+ <div className="p-4" > 
    <h4>{ele.name.common}</h4>
    <p>population: {ele.population}</p>
    <p>Region: {ele.region}</p>
@@ -95,17 +98,17 @@ let s={
   let ap= co.filter(ele=> ele.region == lol)
   setwe(ap.map(ele=>
 
-      <div className="gri" style={display?style:sty} >
+      <div className="w-48 flex flex-col" style={display?style:sty} >
             
-      <div className="o" >
-      <img className="o" src={ele.flags.svg} alt=""/>
+      <div className=" flex items-center" >
+      <img className="w-48 h-40" src={ele.flags.svg} alt=""/>
     
       </div>
   
-   <div className="gr" > 
+   <div className="p-4" > 
      <h4>{ele.name.common}</h4>
      <p>population: {ele.population}</p>
-     <p>Region: {ele.region}</p>
+     <p>Regionn: {ele.region}</p>
      <p>Capital:{ele.capital}</p>
       
    </div>
@@ -145,10 +148,10 @@ function dark (){
     <div className="App">
       
      
-      <div> 
+      <div  > 
 
-          <div  style={display?style:sty} className="aa"  >
-            <p>where is the world?</p>
+          <div  style={display?style:sty} className=" py-3 flex justify-between px-7"  >
+            <p  >where is the world ?</p>
             <section  >
           {display &&  <img onClick={()=>light()}  className="ab" src={op} alt=""/>}{display && <   > dark mode</>}  
           {!display && <img onClick={()=>dark()} className="ab" src={opp} alt=""/> } {!display && <>light mode</>} 
@@ -160,7 +163,7 @@ function dark (){
       <div >
 
         <div style={display?styl:s} >
-        <div className="qq" style={display?styl:s}  >
+        <div className="px-5" style={display?styl:s}  >
        {/* <input style={coun?style:sty} className="as"
          onChange={e=>got(e.target.value)} />*/}
         <select style={display?style:sty} className="kk" onChange={e=>got(e.target.value)} onClick={()=>setcountt(false)} >  
@@ -177,24 +180,33 @@ function dark (){
         </div>
 
 
-     {!count && <div className="grip-all" style={display?styl:s} >
-        <button style={display?style:sty} onClick={()=>setcountt(ele=>ele?false:true)} >back </button>
-        <div style={display?styl:s} className="grip">
+     {!count && <div className="" style={display?styl:s} >
+      <div className="flex justify-end px-10">
+        <button  style={display?style:sty} onClick={()=>setcountt(ele=>ele?false:true)} >view all countries</button>
+       </div>
+       <div  style={display?styl:s} >
+        <div style={display?styl:s}
+              className="md:grid md:grid-cols-3 lg:grid-cols-4 p-10  sm:grid sm:justify-self-center sm:grid-cols-2 flex flex-col gap-4 items-center ">
 
           {we}
          
+        </div>
         </div>
         </div>}
       </div>
      
       
-        <div className="grip-a" >
-
-       <div style={display?styl:s} className="grip">
-      
+        <div className="" >
+        <div
+         style={display?styl:s}>
+      <div 
+      style={display?styl:s}
+       className="md:grid md:grid-cols-3 lg:grid-cols-4 p-10  sm:grid sm:justify-self-center sm:grid-cols-2 flex flex-col gap-4 items-center ">
+    
       {count && hopp}
       
         
+       </div>
        </div>
        </div>
 

@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import op from './image/6714978.png'
 import opp from './image/4808961-200.png'
-import './ac.css'
+//import './ac.css'
 import Filte from "./filter";
 
 function Mapp(){
     const [coun,setcount]=useState(true)
     const [co,setcoun]=useState([])
-    const [we,setwe]=useState(["lovdvd"])
+    const [we,setwe]=useState(["loading>>>"])
     
 
+    
     
 
     useEffect(()=>{
@@ -60,8 +61,8 @@ let hopp = co.map(ele=>{
 
  <div className="gr" > 
    <h4>{ele.name.common}</h4>
-   <p>population: {ele.population}</p>
-   <p>Region: {ele.region}</p>
+   <p>population:{ele.population}</p>
+   <p>Regions: {ele.region}</p>
    <p>Capital:{ele.capital}</p>
     
  </div>

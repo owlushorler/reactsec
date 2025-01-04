@@ -54,7 +54,7 @@
     margin-top: 30px;
 }
 
-@media screen and (min-width: 100px) {
+{/*@media screen and (min-width: 100px) {
     .aa{
         width: 100vw;
         font-size: 4vw;
@@ -180,4 +180,4 @@
         width: 100vw;
     }
 }
-
+*/}
