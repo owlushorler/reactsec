@@ -1,22 +1,44 @@
 import { useEffect, useState } from "react";
-import op from './image/6714978.png'
-import opp from './image/4808961-200.png'
-//import './ac.css'
-import Filte from "./filter";
+import axios from 'axios';  
+
+import './ac.css'
+
 
 function Mapp(){
     const [coun,setcount]=useState(true)
     const [co,setcoun]=useState([])
     const [we,setwe]=useState(["loading>>>"])
+    const [date, setDate] = useState(null);  
+    const [loading, setLoading] = useState(true);  
+    const [error, setError] = useState(null);
     
 
-    
     
 
     useEffect(()=>{
-        fetch("https://restcountries.com/v3.1/all")
-        .then(res=>res.json())
-        .then(data=>(setcoun(data),console.log(data[0].flags)))
+       // fetch("https://restcountries.com/v3.1/all")
+       // .then(res=>res.json())
+      //  .then(data=>(setcoun(data),console.log(data[0].flags)))
+
+            // Function to fetch date  
+    const fetchDate = async () => {  
+      try {  
+        // Replace with your actual API endpoint  
+        const response = await axios.get('https://restcountries.com/v3.1/all');  
+        
+        // Set the date from the API response  
+        setcoun(response.data);  
+        setLoading(false);  
+      } catch (err) {  
+        // Handle any errors  
+        setError(err.message);  
+        setLoading(false);  
+      }  }
+
+
+      fetchDate()
+
+
         
       },[])
 

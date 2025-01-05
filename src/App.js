@@ -7,6 +7,7 @@ import Mapp from "./aa";
 import store from "./store";
 import "./index.css"
 import {useSelector} from "react-redux"
+import axios from 'axios';  
 
 
 
@@ -16,6 +17,9 @@ function App() {
   const [count,setcountt]=useState(true)
   const [co,setcoun]=useState([])
   const [we,setwe]=useState(["loading..."])
+  const [date, setDate] = useState(null);  
+  const [loading, setLoading] = useState(true);  
+  const [error, setError] = useState(null);
   const display = useSelector((state)=>state.dis)
 
   
@@ -58,11 +62,31 @@ let s={
  
 
   useEffect(()=>{
-    fetch("https://restcountries.com/v3.1/all")
-    .then(res=>res.json())
-    .then(data=>(setcoun(data),console.log(data[0].flags)))
-    
-  },[])
+    // fetch("https://restcountries.com/v3.1/all")
+    // .then(res=>res.json())
+   //  .then(data=>(setcoun(data),console.log(data[0].flags)))
+
+         // Function to fetch date  
+ const fetchDate = async () => {  
+   try {  
+     // Replace with your actual API endpoint  
+     const response = await axios.get('https://restcountries.com/v3.1/all');  
+     
+     // Set the date from the API response  
+     setcoun(response.data);  
+     setLoading(false);  
+   } catch (err) {  
+     // Handle any errors  
+     setError(err.message);  
+     setLoading(false);  
+   }  }
+
+
+   fetchDate()
+
+
+     
+   },[])
  
     
   const hopp = co.map(ele=>{
